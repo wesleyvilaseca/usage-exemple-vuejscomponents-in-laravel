@@ -8,6 +8,9 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 
+import Vue from "vue";
+import VueToastr from "vue-toastr";
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -28,6 +31,8 @@ Vue.component('add-to-cart-button', require('./components/AddToCart.vue').defaul
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+Vue.use(VueToastr);
 
 const app = new Vue({
     el: '#app',

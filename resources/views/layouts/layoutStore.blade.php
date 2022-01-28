@@ -163,7 +163,7 @@
     <!--====== Main js ======-->
     <script src="assets/js/main.js"></script>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
     @yield('js')
 </body>

@@ -197,7 +197,8 @@
                                                                 class="discount-price">${{ (float) $product->sale_price }}</span>
                                                         </div>
 
-                                                        <add-to-cart-button />
+                                                        <add-to-cart-button :productid="{{ $product->id }}"
+                                                            :userid="{{ auth()->user()->id ?? 0 }}" />
                                                     </div> <!-- single product items -->
                                                 </div>
                                             @endforeach
