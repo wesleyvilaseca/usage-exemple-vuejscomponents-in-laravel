@@ -24,6 +24,8 @@ import VueToastr from "vue-toastr";
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('add-to-cart-button', require('./components/AddToCart.vue').default);
+Vue.component('cart-component', require('./components/CartComponent.vue').default);
+Vue.component('content-checkout', require('./pages/CheckoutComponent.vue').default);
 
 
 /**

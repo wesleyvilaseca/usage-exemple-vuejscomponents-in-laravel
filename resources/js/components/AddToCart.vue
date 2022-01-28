@@ -29,6 +29,8 @@ export default {
         product_id: this.productid,
       });
 
+      this.$root.$emit('changeInCart', data.cartItens)
+
       return this.$toastr.s(data.message);
 
     },

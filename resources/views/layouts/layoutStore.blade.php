@@ -90,39 +90,23 @@
                                     <li class="nav-item">
                                         <a data-scroll-nav="0" href="#product">Products</a>
                                     </li>
-                                    {{-- <li class="nav-item">
-                                        <a data-scroll-nav="0" href="#service">Services</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a data-scroll-nav="0" href="#showcase">Portfolio</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a data-scroll-nav="0" href="#team">Team</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a data-scroll-nav="0" href="#blog">Blog</a>
-                                    </li> --}}
+
+                                    <div>
+                                        <cart-component />
+                                    </div>
 
                                     <li class="nav-item">
-                                        <a data-scroll-nav="0" href="#blog">
-                                            <i class="fas fa-shopping-cart"></i> <b>2</b>
-                                        </a>
+                                        @if (auth()->user())
+                                            <a href="{{ url('/home') }}" class="text-sm text-gray-700"><i
+                                                    class="far fa-user"></i></a>
+                                        @else
+                                            <a href="{{ url('/home') }}" class="text-sm text-gray-700">
+                                                <i class="fas fa-sign-in-alt"></i>
+                                            </a>
+                                        @endif
                                     </li>
 
-                                    @if (Route::has('login'))
-                                        <li class="nav-item"> @auth
-                                                <a href="{{ url('/home') }}" class="text-sm text-gray-700"><i
-                                                        class="far fa-user"></i></a>
-                                            @else
-                                                <a href="{{ route('login') }}" class="text-sm text-gray-700"> Login </a>
-                                                @if (Route::has('register'))
 
-                                                    <a href="{{ route('login') }}" class="text-sm text-gray-700"> Fala
-                                                    </a>
-                                                @endif
-                                            @endauth
-                                        </li>
-                                    @endif
                                 </ul> <!-- navbar nav -->
                             </div>
                         </nav> <!-- navbar -->
@@ -133,6 +117,7 @@
 
         <!--====== HEADER PART ENDS ======-->
         @yield('content')
+
     </div>
 
 
@@ -164,6 +149,8 @@
     <script src="assets/js/main.js"></script>
 
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+    
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
     @yield('js')
 </body>

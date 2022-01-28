@@ -16,7 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ProductController::class, 'index']);
+
 Route::post('/cart', [CartController::class, 'store']);
+Route::get('/cart', [CartController::class, 'itens']);
+
+Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout');
+Route::get('/cartitens', [CartController::class, 'getCartItens']);
 
 Auth::routes();
 

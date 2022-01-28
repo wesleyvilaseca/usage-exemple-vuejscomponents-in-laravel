@@ -12,6 +12,6 @@ class ProductController extends Controller
     {
         $data['products'] = Product::all();
 
-        return view('products', $data);
+        return view('pages.products', $data);
     }
 }
